@@ -1,0 +1,26 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build Plugin",
+            "type": "shell",
+            "command": "cd build && make",
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": ["$gcc"]
+        },
+        {
+            "label": "Run Standalone",
+            "type": "shell",
+            "command": "open",
+            "args": ["build/CursorJuceTemplate_artefacts/Debug/Standalone/Cursor JUCE Template.app"],
+            "group": "test",
+            "dependsOn": "Build Plugin"
+        }
+    ]
+} 
