@@ -27,17 +27,27 @@ A modern, well-configured JUCE audio plugin template for rapid development with 
 
 1. **Clone this template**:
    ```bash
-   git clone <your-template-repo> MyNewPlugin
+   git clone https://github.com/jasonmarkperez/CursorJuceTemplate.git MyNewPlugin
    cd MyNewPlugin
    ```
 
-2. **Initialize JUCE submodule**:
+2. **Run the setup script** (recommended):
    ```bash
-   git submodule update --init --recursive
+   ./setup.sh
    ```
+   
+   This script will automatically:
+   - Initialize the JUCE submodule
+   - Set up the build directory
+   - Configure CMake
+   - Build the project
 
-3. **Build the plugin**:
+3. **Or manually** (if you prefer):
    ```bash
+   # Initialize JUCE submodule
+   git submodule update --init --recursive
+   
+   # Build the plugin
    mkdir build && cd build
    cmake .. && make
    ```
