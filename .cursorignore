@@ -1,0 +1,43 @@
+# Build artifacts
+build/
+Builds/
+JuceLibraryCode/
+
+# JUCE framework (large, not needed for AI assistance)
+JUCE/
+
+# Generated files
+*.jucer
+*.jucer.bak
+
+# Audio plugin binaries
+*.vst3
+*.component
+*.app
+*.dylib
+*.so
+*.dll
+*.exe
+
+# IDE files that don't need AI assistance
+.vscode/settings.json
+.vscode/launch.json
+.vscode/extensions.json
+
+# Temporary and cache files
+*.tmp
+*.temp
+*~
+.DS_Store
+
+# CMake generated files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+
+# Code signing and certificates
+*.p12
+*.keystore
+*.cert
+*.pem 

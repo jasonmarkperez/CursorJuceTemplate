@@ -1,0 +1,73 @@
+# Build directories
+build/
+Builds/
+JuceLibraryCode/
+
+# IDE files
+.vscode/settings.json
+.vscode/launch.json
+.vscode/tasks.json
+.vscode/c_cpp_properties.json
+.vscode/extensions.json
+
+# macOS
+.DS_Store
+*.app/Contents/MacOS/
+*.component/Contents/MacOS/
+*.vst3/Contents/MacOS/
+
+# Windows
+*.exe
+*.dll
+*.lib
+*.pdb
+*.ilk
+*.exp
+*.obj
+*.o
+
+# Linux
+*.so
+*.a
+
+# JUCE specific
+*.jucer
+*.jucer.bak
+
+# Audio plugin formats
+*.vst3
+*.component
+*.app
+*.dylib
+
+# Temporary files
+*~
+*.tmp
+*.temp
+
+# Logs
+*.log
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+
+# Xcode
+*.xcodeproj/
+*.xcworkspace/
+DerivedData/
+
+# Visual Studio
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.sln
+.vs/
+
+# Code signing
+*.p12
+*.keystore
+*.cert
+*.pem 

@@ -1,0 +1,35 @@
+# CursorJuceTemplate - JUCE Audio Plugin Development
+
+## Project Overview
+This is a JUCE audio plugin template for rapid development. The project uses CMake for building and supports AU, VST3, and Standalone plugin formats.
+
+## Key Files and Directories
+- `CMakeLists.txt` - Main build configuration
+- `source/` - Plugin source code (processor and editor)
+- `JUCE/` - JUCE framework (submodule)
+- `.vscode/` - IDE configuration files
+- `build_and_run.sh` - Quick build and run script
+
+## Development Guidelines
+- Always use `juce::` namespace for JUCE classes
+- Follow JUCE naming conventions (PascalCase for classes)
+- Use `JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR` for processor classes
+- Implement audio processing in `processBlock()` method
+- Add GUI components in the editor class
+
+## Common Tasks
+- Build: `cd build && make`
+- Run standalone: `./build_and_run.sh`
+- Clean build: `cd build && make clean && make`
+
+## Code Style
+- Use C++17 features
+- Prefer `auto` for type inference
+- Use `override` keyword for virtual functions
+- Include `<JuceHeader.h>` in all source files
+
+## JUCE Best Practices
+- Keep audio processing real-time safe
+- Use `juce::ScopedNoDenormals` in processBlock
+- Implement proper parameter automation
+- Handle state saving/loading in getStateInformation/setStateInformation 

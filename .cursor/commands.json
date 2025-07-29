@@ -1,0 +1,40 @@
+{
+  "commands": [
+    {
+      "name": "Build Plugin",
+      "description": "Build the JUCE plugin using CMake",
+      "command": "cd build && make",
+      "category": "Build"
+    },
+    {
+      "name": "Clean Build",
+      "description": "Clean and rebuild the plugin",
+      "command": "cd build && make clean && make",
+      "category": "Build"
+    },
+    {
+      "name": "Run Standalone",
+      "description": "Build and run the standalone plugin",
+      "command": "./build_and_run.sh",
+      "category": "Run"
+    },
+    {
+      "name": "Initialize JUCE",
+      "description": "Initialize JUCE submodule",
+      "command": "git submodule update --init --recursive",
+      "category": "Setup"
+    },
+    {
+      "name": "Create Build Directory",
+      "description": "Create build directory and configure CMake",
+      "command": "mkdir -p build && cd build && cmake ..",
+      "category": "Setup"
+    },
+    {
+      "name": "Open Plugin in DAW",
+      "description": "Open the built plugin in system audio plugin directories",
+      "command": "open /Users/jp/Library/Audio/Plug-Ins/Components/",
+      "category": "Run"
+    }
+  ]
+} 

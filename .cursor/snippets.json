@@ -1,0 +1,91 @@
+{
+  "JUCE Audio Parameter": {
+    "prefix": "juce_param",
+    "body": [
+      "juce::AudioParameterFloat* ${1:parameterName} = new juce::AudioParameterFloat(",
+      "    \"${1:parameterName}\",",
+      "    \"${2:Parameter Display Name}\",",
+      "    ${3:0.0f}, ${4:1.0f}, ${5:0.5f}",
+      ");",
+      "addParameter(${1:parameterName});"
+    ],
+    "description": "Create a JUCE audio parameter"
+  },
+  "JUCE Slider": {
+    "prefix": "juce_slider",
+    "body": [
+      "juce::Slider ${1:sliderName};",
+      "${1:sliderName}.setSliderStyle(juce::Slider::${2:LinearHorizontal});",
+      "${1:sliderName}.setRange(${3:0.0}, ${4:1.0}, ${5:0.01});",
+      "${1:sliderName}.setValue(${6:0.5});",
+      "${1:sliderName}.setTextBoxStyle(juce::Slider::TextBoxRight, false, 60, 20);",
+      "${1:sliderName}.addListener(this);",
+      "addAndMakeVisible(&${1:sliderName});"
+    ],
+    "description": "Create a JUCE slider with proper setup"
+  },
+  "JUCE Button": {
+    "prefix": "juce_button",
+    "body": [
+      "juce::TextButton ${1:buttonName};",
+      "${1:buttonName}.setButtonText(\"${2:Button Text}\");",
+      "${1:buttonName}.addListener(this);",
+      "addAndMakeVisible(&${1:buttonName});"
+    ],
+    "description": "Create a JUCE button"
+  },
+  "JUCE Audio Processing": {
+    "prefix": "juce_process",
+    "body": [
+      "void processBlock(juce::AudioBuffer<float>& buffer, juce::MidiBuffer& midiMessages) override",
+      "{",
+      "    juce::ScopedNoDenormals noDenormals;",
+      "    auto totalNumInputChannels = getTotalNumInputChannels();",
+      "    auto totalNumOutputChannels = getTotalNumOutputChannels();",
+      "",
+      "    // Clear any output channels that don't have input data",
+      "    for (auto i = totalNumInputChannels; i < totalNumOutputChannels; ++i)",
+      "        buffer.clear(i, 0, buffer.getNumSamples());",
+      "",
+      "    // Process audio here",
+      "    for (int channel = 0; channel < totalNumInputChannels; ++channel)",
+      "    {",
+      "        auto* channelData = buffer.getWritePointer(channel);",
+      "        ",
+      "        for (int sample = 0; sample < buffer.getNumSamples(); ++sample)",
+      "        {",
+      "            ${1:// Your audio processing code here}",
+      "        }",
+      "    }",
+      "}"
+    ],
+    "description": "JUCE audio processing template"
+  },
+  "JUCE Component Layout": {
+    "prefix": "juce_layout",
+    "body": [
+      "void resized() override",
+      "{",
+      "    auto area = getLocalBounds();",
+      "    ",
+      "    // Position your components here",
+      "    ${1:componentName}.setBounds(area.removeFromTop(30).reduced(10, 5));",
+      "}"
+    ],
+    "description": "JUCE component layout template"
+  },
+  "JUCE Paint": {
+    "prefix": "juce_paint",
+    "body": [
+      "void paint(juce::Graphics& g) override",
+      "{",
+      "    g.fillAll(getLookAndFeel().findColour(juce::ResizableWindow::backgroundColourId));",
+      "    ",
+      "    g.setColour(juce::Colours::white);",
+      "    g.setFont(15.0f);",
+      "    g.drawFittedText(\"${1:Your Text}\", getLocalBounds(), juce::Justification::centred, 1);",
+      "}"
+    ],
+    "description": "JUCE paint method template"
+  }
+} 
